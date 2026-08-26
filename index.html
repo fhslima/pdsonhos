@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Transforme seus sonhos em objetivos claros e leve seu mapa pessoal com você.">
+  <title>TOMATe — do sonho à agenda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <a class="brand" href="#" aria-label="Protetor de Sonhos — início">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>Protetor de Sonhos</span>
+    </a>
+    <div class="hero-copy">
+      <p class="eyebrow">Seu mapa pessoal</p>
+      <h1>TOMATe: <em>do sonho à agenda</em></h1>
+      <p>Escolha o que importa, transforme desejos em objetivos e construa um mapa para seguir em frente.</p>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <nav class="steps" aria-label="Etapas do planejamento">
+      <button class="step is-active" data-step="temas"><span>1</span> Temas</button>
+      <button class="step" data-step="objetivos"><span>2</span> Objetivos</button>
+      <button class="step" data-step="metas"><span>3</span> Metas / Ações</button>
+      <button class="step" data-step="tempos"><span>4</span> Tempos</button>
+      <button class="step" data-step="mapa"><span>5</span> Mapa</button>
+    </nav>
+
+    <section class="panel is-active" id="temas" aria-labelledby="temas-title">
+      <div class="section-heading">
+        <div><p class="kicker">Etapa 1</p><h2 id="temas-title">O que importa para você?</h2></div>
+        <p>Marque quantos temas fizerem sentido neste momento. Você poderá mudar suas escolhas quando quiser.</p>
+      </div>
+      <div id="theme-groups" class="theme-groups"></div>
+      <div class="panel-footer">
+        <p><strong id="selection-count">0</strong> temas selecionados</p>
+        <button class="primary next" data-next="objetivos">Definir objetivos <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="panel" id="objetivos" aria-labelledby="objetivos-title" hidden>
+      <div class="section-heading">
+        <div><p class="kicker">Etapa 2</p><h2 id="objetivos-title">Dê direção aos seus sonhos</h2></div>
+        <p>Escreva um objetivo claro para cada tema escolhido. Tente começar com um verbo de ação.</p>
+      </div>
+      <div id="objectives-list" class="objectives-list"></div>
+      <div id="empty-objectives" class="empty-state" hidden>
+        <span aria-hidden="true">◇</span><h3>Nenhum tema selecionado</h3>
+        <p>Volte à primeira etapa e escolha os temas que deseja levar para o seu mapa.</p>
+        <button class="secondary next" data-next="temas">Escolher temas</button>
+      </div>
+      <div class="panel-footer">
+        <button class="secondary next" data-next="temas">← Voltar</button>
+        <button class="primary next" data-next="mapa">Ver meu mapa <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="panel future-panel" id="metas" aria-labelledby="metas-title" hidden>
+      <p class="kicker">Etapa 3</p><div class="future-icon">◎</div><h2 id="metas-title">Metas / Ações</h2>
+      <p>Em breve, este espaço ajudará você a transformar cada objetivo em passos concretos.</p>
+      <button class="secondary next" data-next="tempos">Conhecer a próxima etapa →</button>
+    </section>
+
+    <section class="panel future-panel" id="tempos" aria-labelledby="tempos-title" hidden>
+      <p class="kicker">Etapa 4</p><div class="future-icon">◷</div><h2 id="tempos-title">Tempos</h2>
+      <p>Em breve, você poderá organizar prazos, ritmos e momentos para cuidar dos seus planos.</p>
+      <button class="secondary next" data-next="mapa">Ir para o mapa →</button>
+    </section>
+
+    <section class="panel map-panel" id="mapa" aria-labelledby="mapa-title" hidden>
+      <div class="section-heading">
+        <div><p class="kicker">Etapa 5</p><h2 id="mapa-title">Seu mapa de sonhos</h2></div>
+        <p>Uma visão simples do que você escolheu cuidar agora.</p>
+      </div>
+      <div id="map-content" class="map-content"></div>
+      <div class="panel-footer map-actions">
+        <button class="secondary next" data-next="objetivos">← Editar objetivos</button>
+        <button class="primary" id="download-pdf">Baixar meu mapa em PDF <span>↓</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>✦</span> Pequenos passos protegem grandes sonhos.</footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
