@@ -13,7 +13,7 @@ const groups = [
     ["Significado", "Realidade", "Destino", "Espiritualidade", "Transcendência", "Finitude e Morte"],
     ["Qualidades", "Fluxo", "Introspecção", "Calma", "Abertura", "Gratidão", "Atenção", "Resiliência"]
   ]},
-  { label: "Propósito", code: "P", rows: [
+  { label: "Pessoa", code: "P", rows: [
     ["Identidade", "Individuação", "Autoestima", "Autoaceitação", "Crescimento pessoal", "Mitos pessoais", "Internalidade"],
     ["Propósito", "Carreira", "Vocação", "Legado", "Papéis sociais", "Missão", "Generatividade"],
     ["Ambiente", "Autonomia", "Domínio do ambiente", "Uso do tempo", "Organização", "Hábitos e vícios"],
