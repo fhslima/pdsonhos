@@ -79,7 +79,7 @@ function generatePdf() {
   const catalog=add("<< /Type /Catalog /Pages 2 0 R >>");
   const pagesRef=add(""); const font=add("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"); const pageRefs=[];
   pages.forEach((pageLines,pageIndex) => { let stream=`BT /F1 11 Tf ${margin} ${pageHeight-margin} Td`;
-    pageLines.forEach((line,i) => { const size=(pageIndex===0&&i===0)?20:(pageIndex===0&&i===1)?10:11; stream+=` /F1 ${size} Tf ${i===0?0:-lineHeight} Td (${pdfEscape(line)}) Tj`; }); stream+=" ET";
+    pageLines.forEach((line,i) => { const size=(pageIndex===0&&i===0)?20:(pageIndex===0&&i===1)?10:11; stream+=` /F1 ${size} Tf 0 ${i===0?0:-lineHeight} Td (${pdfEscape(line)}) Tj`; }); stream+=" ET";
     const contentRef=add(`<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`); pageRefs.push(add(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 ${font} 0 R >> >> /Contents ${contentRef} 0 R >>`));
   });
   objects[pagesRef-1]=`<< /Type /Pages /Kids [${pageRefs.map(r=>`${r} 0 R`).join(" ")}] /Count ${pageRefs.length} >>`;
